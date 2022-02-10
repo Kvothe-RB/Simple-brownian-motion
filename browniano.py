@@ -1,10 +1,10 @@
 import numpy as np # import numpy library as np
-import matplotlib.pyplot as plt # import pyplot library as plt 
+import matplotlib.pyplot as plt # import pyplot library as plt
 from mpl_toolkits.mplot3d import Axes3D # import Axes3D from `mpl_toolkits.mplot3d`
 plt.style.use('ggplot') # use "ggplot" style for graphs
 
 dim  = 3 # system dimension (x,y,z)
-nump = 100 # number of independent Brownian particles to simulate 
+nump = 100 # number of independent Brownian particles to simulate
 nums = 4096 # number of simulation steps
 dt   = 0.0125 # set time increment, \Delta t
 zeta = 1 # set friction constant, \zeta
@@ -28,7 +28,7 @@ for i in range(nums): # repeat the following operations from i=0 to nums-1
     Ws[i,:,:]=W # accumulate random forces at each step in an array Ws
     time[i]=i*dt # store time in each step in an array time
 
- 
+
 box=80. # set draw area as box^2
 fig, ax = plt.subplots(figsize=(7.5,7.5)) # set fig with its size 7.5 x 7.5 inch
 ax.set_xlabel(r"$R_x$", fontsize=20) # set x-label
@@ -37,7 +37,7 @@ plt.xlim(-box/2,box/2) # set x-range
 plt.ylim(-box/2,box/2) # set y-range
 for n in range(nump): # repeat from n=0 to nump-1
     ax.plot(Rs[:,n,0],Rs[:,n,1],alpha=0.5) # plot trajectiries of all particles
-plt.show() # draw 
+plt.show() # draw
 
 
 box=80. # set draw area as box^2
@@ -63,3 +63,5 @@ ax.view_init(elev=12,azim=120) # set view point
 for n in range(nump): # repeat from n=0 to nump-1
     ax.plot(Rs[:,n,0],Rs[:,n,1],Rs[:,n,2],alpha=0.5) # plot trajectiries of all particle
 plt.show() # draw plots
+
+#Estou probando se me funciona GitHub destkop
